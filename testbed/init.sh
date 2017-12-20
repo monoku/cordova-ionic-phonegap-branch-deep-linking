@@ -72,6 +72,9 @@ logger() {
 
 # main
 main() {
+  logger "info" "BRANCH: validate code \n"
+  gulp prod
+
   logger "info" "BRANCH: clean \n"
   rm -rf ../.installed
   rm -rf ../tmp
@@ -86,15 +89,14 @@ main() {
   if [[ "$run_cor" == "true" ]]; then
     logger "info" "BRANCH: install cordova \n"
     npm install -g cordova gulp-cli ios-deploy
+    cordova -v
   fi
 
   if [[ "$run_dep" == "true" ]]; then
     logger "info" "BRANCH: uninstall node dependencies \n"
-    npm uninstall mkpath node-version-compare plist xml2js
+    rm -rf ../node_modules
+    # npm uninstall mkpath node-version-compare plist xml2js
   fi
-
-  logger "info" "BRANCH: validate code \n"
-  gulp prod
 
   logger "info" "BRANCH: copy config \n"
   cp config.template.xml config.xml
