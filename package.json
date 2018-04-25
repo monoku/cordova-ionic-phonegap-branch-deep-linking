@@ -37,11 +37,8 @@
   },
   "scripts": {
     "changelog": "node ./src/scripts/npm/updateChangeLog -reset=true",
-    "commitmsg": "validate-commit-msg",
     "validate": "gulp prod",
     "dependencies": "ncu -u",
-    "precommit": "gulp prod",
-    "postcommit": "semantic-release pre --verifyRelease='./src/scripts/npm/updateNpmVersion' || true",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "dependencies": {
