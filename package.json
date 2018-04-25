@@ -45,8 +45,7 @@
     "mkpath": "^1.0.0",
     "node-version-compare": "^1.0.1",
     "plist": "^2.1.0",
-    "request": "^2.81.0",
-    "xml2js": "^0.4.18"
+    "request": "^2.81.0"
   },
   "devDependencies": {
     "cordova": "^7.0.1",
